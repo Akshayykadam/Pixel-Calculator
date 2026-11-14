@@ -1,0 +1,12 @@
+--- a/smali_classes2/fuf.smali
++++ b/smali_classes2/fuf.smali
+@@ -2329,7 +2329,7 @@
+     .line 251
+     :catch_2
+     move-exception v0
+
+-    throw v0
++    goto :goto_4
+
+     .line 253
+     :catch_3

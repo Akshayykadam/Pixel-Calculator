@@ -1,0 +1,46 @@
+# Build artifacts and binaries
+*.apk
+!Pixel_Calculator_Modded.apk
+*.idsig
+*.apkm
+dist/*
+!dist/Pixel_Calculator_Modded.apk
+extracted/
+decoded_apk/
+bin/
+base/
+out/
+target/
+
+# Gradle & Kotlin
+.gradle/
+build/
+.kotlin/
+
+# IDE & Editors
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+**/.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Keystores and private credentials
+*.keystore
+*.jks
+*.key
+*.p12
+
+# Logs & crash dumps
+*.log
+*.hprof
+
+# Screenshots & media assets
+*.png
+!assets/**/*.png

@@ -1,0 +1,35 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force LF on shell scripts, patches, smali, code, and config
+*.sh text eol=lf
+*.patch text eol=lf
+*.smali text eol=lf
+*.kt text eol=lf
+*.java text eol=lf
+*.kts text eol=lf
+*.xml text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Batch scripts need CRLF on Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+
+# Binary files
+*.jar binary
+*.apk binary
+*.apkm binary
+*.so binary
+*.idsig binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.keystore binary
+*.jks binary

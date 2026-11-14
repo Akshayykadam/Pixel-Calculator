@@ -1,0 +1,30 @@
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -1,13 +1,12 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="37" android:compileSdkVersionCodename="DEV" android:requiredSplitTypes="base__abi,base__density" android:splitTypes="" package="com.google.android.calculator" platformBuildVersionCode="37" platformBuildVersionName="DEV">
+-    <original-package android:name="com.android.calculator2"/>
+-    <permission android:name="com.google.android.calculator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="37" android:compileSdkVersionCodename="DEV" package="com.google.android.pixelcalculator" platformBuildVersionCode="37" platformBuildVersionName="DEV">
++    <permission android:name="com.google.android.pixelcalculator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+     <uses-permission android:name="android.permission.INTERNET"/>
+     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+-    <uses-permission android:name="com.google.android.calculator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
++    <uses-permission android:name="com.google.android.pixelcalculator.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+     <queries>
+         <intent>
+             <action android:name="androidx.window.extensions.layout.EngagementModeService"/>
+@@ -45,7 +44,7 @@
+         <meta-data android:name="com.google.android.gms.phenotype.registration.xml:com.google.android.libraries.performance.primes" android:resource="@xml/com_google_android_libraries_performance_primes_phenotype"/>
+         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+-        <provider android:authorities="com.google.android.calculator.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
++        <provider android:authorities="com.google.android.pixelcalculator.mlkitinitprovider" android:exported="false" android:initOrder="99" android:name="com.google.mlkit.common.internal.MlKitInitProvider"/>
+--- a/res/values/strings.xml
++++ b/res/values/strings.xml
+@@ -88,1 +88,1 @@
+-    <string name="app_name">Calculator</string>
++    <string name="app_name">Pixel Calculator</string>

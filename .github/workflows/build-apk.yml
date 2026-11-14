@@ -1,0 +1,56 @@
+name: Build Modded APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: 'Direct download URL for base Google Calculator v10.0+ APK or APKM'
+        required: false
+        type: string
+
+jobs:
+  build-apk:
+    name: Package Modded APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK tools
+        uses: android-actions/setup-android@v3
+
+      - name: Install Apktool
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zipalign apksigner patch
+          curl -sL https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -o apktool
+          curl -sL https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.9.3.jar -o apktool.jar
+          chmod +x apktool
+          sudo mv apktool /usr/local/bin/
+          sudo mv apktool.jar /usr/local/bin/
+
+      - name: Download Base Package
+        if: ${{ inputs.apk_url != '' }}
+        run: |
+          mkdir -p base
+          curl -L "${{ inputs.apk_url }}" -o base/target_input.apkm
+
+      - name: Run Packaging Pipeline
+        if: ${{ inputs.apk_url != '' }}
+        run: |
+          chmod +x build.sh scripts/*.sh
+          ./scripts/pipeline.sh base/target_input.apkm
+
+      - name: Upload Modded APK Artifact
+        if: ${{ inputs.apk_url != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pixel_Calculator_Modded
+          path: dist/Pixel_Calculator_Modded.apk
+          if-no-files-found: ignore

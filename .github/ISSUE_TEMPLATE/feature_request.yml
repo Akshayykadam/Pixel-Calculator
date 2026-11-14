@@ -1,0 +1,27 @@
+name: Feature Request
+description: Suggest an idea or enhancement for Pixel Calculator Mod
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a suggestion or feature request? Let us know below!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem?
+      description: A clear and concise description of what the problem or limitation is.
+    validations:
+      required: false
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the Solution You'd Like
+      description: A clear and concise description of what you want to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Additional Context or Alternatives
+      description: Any alternative solutions, mockups, or screenshots you have considered.

@@ -1,0 +1,11 @@
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -91,4 +90,0 @@
+-        <meta-data android:name="com.android.vending.splits.required" android:value="true"/>
+-        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+--- a/apktool.yml
++++ b/apktool.yml
+@@ -15,2 +15,3 @@
+ doNotCompress:
++- so
+ - arsc
